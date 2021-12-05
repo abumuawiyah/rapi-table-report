@@ -16,9 +16,9 @@ interface Person {
   [columns]="columns"
 ></test>
 
-<ng-template #statusTmpl let-data="data">
+<ng-template #statusTmpl let-data="data" let-row="row">
   <div>
-    test
+    {{data}} {{row?.key}}
   </div>
 </ng-template>
 <ng-template #targetTmpl let-data="data">
