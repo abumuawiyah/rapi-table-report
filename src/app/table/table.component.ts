@@ -1,17 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-interface Person {
-  key: string;
-  name: string;
-  age: number;
-  address: string;
-}
-
 @Component({
   selector: 'test',
   template: `
   
-  <nz-table #basicTable [nzData]="listOfData">
+  <nz-table #basicTable [nzData]="rows">
       <thead>
         <tr>
           <th>Name</th>
@@ -46,24 +39,4 @@ export class TableComponent implements OnInit {
   }
   @Input() rows = [];
   @Input() columns = [];
-  listOfData: Person[] = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-    },
-  ];
 }
