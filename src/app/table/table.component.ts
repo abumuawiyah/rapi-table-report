@@ -3,7 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'test',
   template: `
-  
+  <button nz-button (click)="addRow()" nzType="primary">Add</button>
+    <br />
+    <br />
   <nz-table #basicTable [nzData]="rows" nzBordered nzSize="middle" [nzScroll]="{ x: '1200px', y: '240px' }">
   <thead>
   <tr *ngFor="let header of headers">
@@ -45,4 +47,16 @@ export class TableComponent implements OnInit {
   @Input() rows = [];
   @Input() columns = [];
   @Input() headers = [];
+
+  addRow(): void {
+    this.rows = [
+      ...this.rows,
+      {
+        id: `${this.rows.length + 1}`,
+        name: `Edward King`,
+        age: '32',
+        address: `London, Park Lane no`,
+      },
+    ];
+  }
 }
