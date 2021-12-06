@@ -41,6 +41,7 @@ export class NzDemoTableBasicComponent implements OnInit {
   @ViewChild('addressTmpl', { static: true }) addressTmpl!: TemplateRef<any>;
   columns: any[] = [];
   rows: Person[] = [];
+  headers: any[] = [];
 
   ngOnInit(): void {
     const data: any[] = [];
@@ -53,6 +54,7 @@ export class NzDemoTableBasicComponent implements OnInit {
       });
     }
     this.rows = data;
+    this.headers = [{}];
     this.columns = [
       {
         name: 'Name',
@@ -69,6 +71,56 @@ export class NzDemoTableBasicComponent implements OnInit {
         cellTemplate: this.ageTmpl,
         mappedId: 'age',
         filterId: 'age',
+        width: '150px',
+        ellipsis: true,
+        customFilter: true,
+        mandatory: true,
+      },
+      {
+        name: 'Address',
+        cellTemplate: this.addressTmpl,
+        mappedId: 'address',
+        filterId: 'address',
+        width: '150px',
+        ellipsis: true,
+        customFilter: true,
+        mandatory: true,
+      },
+      {
+        name: 'Address',
+        cellTemplate: this.addressTmpl,
+        mappedId: 'address',
+        filterId: 'address',
+        width: '150px',
+        ellipsis: true,
+        customFilter: true,
+        mandatory: true,
+      },
+      {
+        name: 'Address',
+        cellTemplate: this.addressTmpl,
+        mappedId: 'address',
+        filterId: 'address',
+        width: '150px',
+        ellipsis: true,
+        customFilter: true,
+        mandatory: true,
+      },
+      {
+        name: 'Address',
+        cellTemplate: this.addressTmpl,
+        mappedId: 'address',
+        filterId: 'address',
+        width: '150px',
+        ellipsis: true,
+        customFilter: true,
+        mandatory: true,
+      },
+      {
+        name: 'Address',
+        cellTemplate: this.addressTmpl,
+        mappedId: 'address',
+        filterId: 'address',
         width: '150px',
         ellipsis: true,
         customFilter: true,
