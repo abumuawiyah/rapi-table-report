@@ -13,7 +13,8 @@ interface Person {
   <div>
     <test
     [rows]="rows"
-    [columns]="columns">
+    [columns]="columns"
+    [headers]="headers">
     </test>
 
     <ng-template #nameTmpl let-data="data" let-row="row">
@@ -54,7 +55,94 @@ export class NzDemoTableBasicComponent implements OnInit {
       });
     }
     this.rows = data;
-    this.headers = [{}];
+    /**
+     *  <tr>
+    <th rowspan="4" nzLeft [nzFilters]="filterName" [nzFilterFn]="nameFilterFn">Name</th>
+    <th colspan="4">Other</th>
+    <th colspan="2">Company</th>
+    <th rowspan="4" nzRight>Gender</th>
+  </tr>
+  <tr>
+    <th rowspan="3" [nzSortFn]="sortAgeFn">Age</th>
+    <th colspan="3">Address</th>
+    <th rowspan="3">Company Address</th>
+    <th rowspan="3">Company Name</th>
+  </tr>
+  <tr>
+    <th rowspan="2">Street</th>
+    <th colspan="2">Block</th>
+  </tr>
+  <tr>
+    <th>Building</th>
+    <th>Door No.</th>
+  </tr>
+     */
+    this.headers = [
+      {
+        items: [
+          {
+            rowSpan: 4,
+            name: 'Name',
+            direction: 'left',
+          },
+          {
+            colSpan: 4,
+            name: 'Other',
+          },
+          {
+            colSpan: 2,
+            name: 'Company',
+          },
+          {
+            rowSpan: 4,
+            name: 'Gender',
+            direction: 'right',
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            rowSpan: 3,
+            name: 'Age',
+          },
+          {
+            colSpan: 3,
+            name: 'Address',
+          },
+          {
+            rowSpan: 3,
+            name: 'Company Address',
+          },
+          {
+            rowSpan: 3,
+            name: 'Company Name',
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            rowSpan: 2,
+            name: 'Street',
+          },
+          {
+            colSpan: 2,
+            name: 'Block',
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            name: 'Building',
+          },
+          {
+            name: 'Door No.',
+          },
+        ],
+      },
+    ];
     this.columns = [
       {
         name: 'Name',
