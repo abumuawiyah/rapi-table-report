@@ -11,6 +11,7 @@ export class TableComponent implements OnInit {
   @Input() rows = [];
   @Input() columns = [];
   @Input() headers = [];
+  mode = 'date';
 
   addRow(): void {
     this.rows = [
