@@ -84,10 +84,12 @@ export class NzDemoTableBasicComponent implements OnInit {
             rowSpan: 4,
             name: 'Tarikh',
             direction: 'left',
+            width: '300px',
           },
           {
             colSpan: 4,
             name: 'Other',
+            width: '200px',
           },
           {
             colSpan: 2,
@@ -105,18 +107,22 @@ export class NzDemoTableBasicComponent implements OnInit {
           {
             rowSpan: 3,
             name: 'Age',
+            width: '200px',
           },
           {
             colSpan: 3,
             name: 'Address',
+            width: '200px',
           },
           {
             rowSpan: 3,
             name: 'Company Address',
+            width: '200px',
           },
           {
             rowSpan: 3,
             name: 'Company Name',
+            width: '200px',
           },
         ],
       },
@@ -152,7 +158,6 @@ export class NzDemoTableBasicComponent implements OnInit {
         ellipsis: true,
         customFilter: true,
         mandatory: true,
-        width: '300px',
       },
       {
         name: 'Senarai',
