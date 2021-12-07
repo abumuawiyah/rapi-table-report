@@ -72,7 +72,7 @@ import { NzSpaceModule } from 'ng-zorro-antd/space/space.module';
 
 @NgModule({
   exports: [
-    NzSpaceModule,
+    // NzSpaceModule,
     NzAffixModule,
     NzAlertModule,
     NzAnchorModule,

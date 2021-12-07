@@ -49,7 +49,7 @@ export class NzDemoTableBasicComponent implements OnInit {
     for (let i = 0; i < 20000; i++) {
       data.push({
         key: i,
-        name: 'John Brown',
+        name: 'John Brown test hshshhshshshshshshsh hshshshshshshshs',
         age: 32,
         address: 'New York No. 1 Lake Park',
       });
@@ -82,7 +82,7 @@ export class NzDemoTableBasicComponent implements OnInit {
         items: [
           {
             rowSpan: 4,
-            name: 'Name',
+            name: 'Tarikh',
             direction: 'left',
           },
           {
@@ -145,21 +145,21 @@ export class NzDemoTableBasicComponent implements OnInit {
     ];
     this.columns = [
       {
-        name: 'Name',
-        cellTemplate: this.nameTmpl,
+        name: 'Tarikh',
+        uiType: 'date',
         mappedId: 'name',
         filterId: 'name',
-        width: '150px',
         ellipsis: true,
         customFilter: true,
         mandatory: true,
+        width: '300px',
       },
       {
         name: 'Age',
         cellTemplate: this.ageTmpl,
         mappedId: 'age',
         filterId: 'age',
-        width: '150px',
+        width: '300px',
         ellipsis: true,
         customFilter: true,
         mandatory: true,
@@ -169,7 +169,7 @@ export class NzDemoTableBasicComponent implements OnInit {
         cellTemplate: this.addressTmpl,
         mappedId: 'address',
         filterId: 'address',
-        width: '150px',
+        width: '300px',
         ellipsis: true,
         customFilter: true,
         mandatory: true,
@@ -179,7 +179,7 @@ export class NzDemoTableBasicComponent implements OnInit {
         cellTemplate: this.addressTmpl,
         mappedId: 'address',
         filterId: 'address',
-        width: '150px',
+        width: '300px',
         ellipsis: true,
         customFilter: true,
         mandatory: true,
@@ -189,7 +189,7 @@ export class NzDemoTableBasicComponent implements OnInit {
         cellTemplate: this.addressTmpl,
         mappedId: 'address',
         filterId: 'address',
-        width: '150px',
+        width: '300px',
         ellipsis: true,
         customFilter: true,
         mandatory: true,
@@ -199,7 +199,7 @@ export class NzDemoTableBasicComponent implements OnInit {
         cellTemplate: this.addressTmpl,
         mappedId: 'address',
         filterId: 'address',
-        width: '150px',
+        width: '300px',
         ellipsis: true,
         customFilter: true,
         mandatory: true,
@@ -209,7 +209,7 @@ export class NzDemoTableBasicComponent implements OnInit {
         cellTemplate: this.addressTmpl,
         mappedId: 'address',
         filterId: 'address',
-        width: '150px',
+        width: '300px',
         ellipsis: true,
         customFilter: true,
         mandatory: true,
@@ -219,7 +219,7 @@ export class NzDemoTableBasicComponent implements OnInit {
         cellTemplate: this.addressTmpl,
         mappedId: 'address',
         filterId: 'address',
-        width: '150px',
+        width: '300px',
         ellipsis: true,
         customFilter: true,
         mandatory: true,

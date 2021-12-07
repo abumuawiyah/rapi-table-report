@@ -6,7 +6,7 @@
   [nzData]="rows"
   nzBordered
   nzSize="middle"
-  [nzScroll]="{ x: '1200px', y: '240px' }"
+  [nzScroll]="{ x: '2200px', y: '240px' }"
 >
   <thead>
     <tr *ngFor="let header of headers">
@@ -30,26 +30,23 @@
       <ng-container *ngFor="let column of columns">
         <td>
           <ng-container *ngIf="!column?.cellTemplate; else cellTemplate">
-            <ng-container *ngIf="column?.uiType; else componentsTmpl">
-              <span>{{ data[column.mappedId] }}</span>
+            <ng-container *ngIf="!column?.uiType; else componentsTmpl">
+              <span>{{ data[column.mappedId] }} haha</span>
             </ng-container>
             <ng-template #componentsTmpl>
               <ng-container [ngSwitch]="column?.uiType">
                 <ng-container *ngSwitchCase="'date'">
-                  <nz-space>
-                    <nz-select *nzSpaceItem [(ngModel)]="mode">
+                  <section [style.width]="column?.width">
+                    <nz-select [(ngModel)]="mode">
                       <nz-option nzValue="date" nzLabel="Date"></nz-option>
                       <nz-option nzValue="week" nzLabel="Week"></nz-option>
                       <nz-option nzValue="month" nzLabel="Month"></nz-option>
                       <nz-option nzValue="year" nzLabel="Year"></nz-option>
                     </nz-select>
-                    <nz-date-picker
-                      *nzSpaceItem
-                      [nzMode]="mode"
-                    ></nz-date-picker>
-                  </nz-space>
+                    <nz-date-picker [nzMode]="mode"></nz-date-picker>
+                  </section>
                 </ng-container>
-                <span *ngSwitchDefault> {{ data[column.mappedId] } </span>
+                <span *ngSwitchDefault> {{ data[column.mappedId] } huhu</span>
               </ng-container>
             </ng-template>
           </ng-container>
