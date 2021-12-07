@@ -1,17 +1,47 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Component({
   selector: 'test',
   templateUrl: './table.component.html',
 })
 export class TableComponent implements OnInit {
-  ngOnInit(): void {
-    console.log(this);
-  }
   @Input() rows = [];
   @Input() columns = [];
   @Input() headers = [];
   mode = 'date';
+
+  //select
+  randomUserUrl = 'https://api.randomuser.me/?results=10';
+  optionList: string[] = [];
+  selectedUser = null;
+  isLoading = false;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.loadMore();
+  }
+
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  getRandomNameList: Observable<string[]> = this.http
+    .get(`${this.randomUserUrl}`)
+    .pipe(
+      catchError(() => of({ results: [] })),
+      map((res: any) => res.results)
+    )
+    .pipe(map((list: any) => list.map((item: any) => `${item.name.first}`)));
+
+  loadMore(): void {
+    this.isLoading = true;
+    this.getRandomNameList.subscribe((data) => {
+      this.isLoading = false;
+      this.optionList = [...this.optionList, ...data];
+    });
+  }
+  //end select
 
   addRow(): void {
     this.rows = [

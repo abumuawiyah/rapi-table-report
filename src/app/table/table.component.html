@@ -46,6 +46,27 @@
                     <nz-date-picker [nzMode]="mode"></nz-date-picker>
                   </section>
                 </ng-container>
+
+                <ng-container *ngSwitchCase="'select'">
+                  <nz-select
+                    [style.width.%]="80"
+                    [(ngModel)]="selectedUser"
+                    (nzScrollToBottom)="loadMore()"
+                    nzPlaceHolder="Select users"
+                    nzAllowClear
+                    [nzDropdownRender]="renderTemplate"
+                  >
+                    <nz-option
+                      *ngFor="let o of optionList"
+                      [nzValue]="o"
+                      [nzLabel]="o"
+                    ></nz-option>
+                  </nz-select>
+                  <ng-template #renderTemplate>
+                    <nz-spin *ngIf="isLoading"></nz-spin>
+                  </ng-template>
+                </ng-container>
+
                 <span *ngSwitchDefault> {{ data[column.mappedId] } huhu</span>
               </ng-container>
             </ng-template>
