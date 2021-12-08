@@ -75,6 +75,38 @@
                   </ng-template>
                 </ng-container>
 
+                <ng-container *ngSwitchCase="'number'">
+                  <nz-input-number
+                    [(ngModel)]="demoValue"
+                    [nzMin]="1"
+                    [nzMax]="10"
+                    [nzStep]="1"
+                  >
+                  </nz-input-number>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'money'">
+                  <nz-input-number
+                    [(ngModel)]="demoValue"
+                    [nzMin]="1"
+                    [nzMax]="100"
+                    [nzStep]="1"
+                    [nzFormatter]="formatterDollar"
+                    [nzParser]="parserDollar"
+                  ></nz-input-number>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'percentage'">
+                  <nz-input-number
+                    [(ngModel)]="demoValue"
+                    [nzMin]="1"
+                    [nzMax]="100"
+                    [nzStep]="1"
+                    [nzFormatter]="formatterPercent"
+                    [nzParser]="parserPercent"
+                  ></nz-input-number>
+                </ng-container>
+
                 <span *ngSwitchDefault> {{ data[column.mappedId] } huhu</span>
               </ng-container>
             </ng-template>

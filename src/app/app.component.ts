@@ -171,7 +171,8 @@ export class NzDemoTableBasicComponent implements OnInit {
       },
       {
         name: 'Address',
-        cellTemplate: this.addressTmpl,
+        // cellTemplate: this.addressTmpl,
+        uiType: 'number',
         mappedId: 'address',
         filterId: 'address',
         width: '300px',
@@ -181,7 +182,8 @@ export class NzDemoTableBasicComponent implements OnInit {
       },
       {
         name: 'Address',
-        cellTemplate: this.addressTmpl,
+        // cellTemplate: this.addressTmpl,
+        uiType: 'percentage',
         mappedId: 'address',
         filterId: 'address',
         width: '300px',
@@ -191,7 +193,8 @@ export class NzDemoTableBasicComponent implements OnInit {
       },
       {
         name: 'Address',
-        cellTemplate: this.addressTmpl,
+        // cellTemplate: this.addressTmpl,
+        uiType: 'money',
         mappedId: 'address',
         filterId: 'address',
         width: '300px',
