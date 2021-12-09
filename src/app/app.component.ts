@@ -204,7 +204,8 @@ export class NzDemoTableBasicComponent implements OnInit {
       },
       {
         name: 'Address',
-        cellTemplate: this.addressTmpl,
+        // cellTemplate: this.addressTmpl,
+        uiType: 'text',
         mappedId: 'address',
         filterId: 'address',
         width: '300px',

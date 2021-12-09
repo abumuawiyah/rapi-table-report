@@ -43,6 +43,14 @@
             </ng-container>
             <ng-template #componentsTmpl>
               <ng-container [ngSwitch]="column?.uiType">
+                <ng-container *ngSwitchCase="'text'">
+                  <textarea
+                    nz-input
+                    placeholder="placeholder"
+                    [nzAutosize]="{ minRows: 1, maxRows: 3 }"
+                  ></textarea>
+                </ng-container>
+
                 <ng-container *ngSwitchCase="'date'">
                   <section [style.width]="column?.width">
                     <nz-select [(ngModel)]="mode">
