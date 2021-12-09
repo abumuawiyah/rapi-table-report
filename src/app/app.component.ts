@@ -215,7 +215,7 @@ export class NzDemoTableBasicComponent implements OnInit {
       },
       {
         name: 'Address',
-        cellTemplate: this.addressTmpl,
+        uiType: 'icon',
         mappedId: 'address',
         filterId: 'address',
         width: '300px',
@@ -225,7 +225,7 @@ export class NzDemoTableBasicComponent implements OnInit {
       },
       {
         name: 'Address',
-        cellTemplate: this.addressTmpl,
+        uiType: 'icon',
         mappedId: 'address',
         filterId: 'address',
         width: '300px',

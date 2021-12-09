@@ -51,6 +51,10 @@
                   ></textarea>
                 </ng-container>
 
+                <ng-container *ngSwitchCase="'icon'">
+                  <i nz-icon nzType="check" nzTheme="outline"> </i>
+                </ng-container>
+
                 <ng-container *ngSwitchCase="'date'">
                   <section [style.width]="column?.width">
                     <nz-select [(ngModel)]="mode">
