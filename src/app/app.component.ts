@@ -46,7 +46,7 @@ export class NzDemoTableBasicComponent implements OnInit {
 
   ngOnInit(): void {
     const data: any[] = [];
-    for (let i = 0; i < 20000; i++) {
+    for (let i = 0; i < 5; i++) {
       data.push({
         key: i,
         name: 'John Brown test hshshhshshshshshshsh hshshshshshshshs',
